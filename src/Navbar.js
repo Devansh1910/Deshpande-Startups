@@ -1,14 +1,35 @@
-
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import logo1 from "./assets/Logo 1.png";
-import {  Link } from "react-router-dom";
 import "./style/Navbar.css";
-function Navbar() {
+
+const Navbar = () => {
+  const [isSection1Visible, setIsSection1Visible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section1 = document.getElementById("section1");
+      const navbar = document.getElementById("navbar");
+
+      if (section1 && navbar) {
+        const rect = section1.getBoundingClientRect();
+        const isVisible =
+          rect.top <= window.innerHeight && rect.bottom >= 0;
+        setIsSection1Visible(isVisible);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <div className="nav">
-
-       {/* Main Logo of Website */}
+      <div
+        id="navbar"
+        className={isSection1Visible ? "nav visible" : "nav"}
+      >
+        {/* Main Logo of Website */}
         <div className="img">
           <img src={logo1} alt="" srcSet="" />
         </div>
@@ -36,8 +57,8 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <Link to="/media offering" className="nav-link">
-               MEDIA OFFERING
-              </Link> 
+                MEDIA OFFERING
+              </Link>
             </li>
             <li className="nav-item">
               <Link to="/contact" className="nav-link">
@@ -49,6 +70,6 @@ function Navbar() {
       </div>
     </>
   );
-}
+};
 
 export default Navbar;

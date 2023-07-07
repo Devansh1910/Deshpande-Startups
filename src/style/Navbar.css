@@ -1,45 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-*{
-   font-family: 'Poppins', sans-serif;
+* {
+  font-family: 'Poppins', sans-serif;
 }
+
 .nav {
- position: sticky;
- top: 0;
- left: 0;
- width: 100%;
- background-color: #fff;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   
-   z-index: 999;
-   transition: background-color 0.3s;
- }
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  transition: background-color 0.3s;
+}
 
- .navlinks {
-   margin-left: auto; /* Pushes the nav links to the right */
-   
- }
- .nav-link{
-   text-decoration: none;
- }
+.navlinks {
+  margin-left: auto; /* Pushes the nav links to the right */
+}
 
- .navlinks ul { 
-   display: flex;
-   list-style: none;
-   padding: 0;
-   margin: 0;
- }
- .navlinks li {
-   font-size: 16px !important;
-   font-weight: 300;
-   letter-spacing: 1px;
-   margin-right: 35px;
-   cursor: pointer;
- }
+.nav-link {
+  text-decoration: none;
+}
 
- .img img {
-   width: 200px; /* Adjust the width as needed */
-   height: auto; /* Maintain aspect ratio */
- }
+.navlinks ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navlinks li {
+  font-size: 16px !important;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-right: 35px;
+  cursor: pointer;
+}
+
+.img img {
+  width: 200px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
